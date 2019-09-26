@@ -1,0 +1,24 @@
+Setting up VRX Gazebo environment
+
+In Terminal
+    1. source ~/vrx_ws/devel/setup.bash
+       
+Launch a project (choose one)
+    1. roslaunch vrx_gazebo station_keeping.launch
+    2. roslaunch vrx_gazebo wayfinding.launch
+    3. roslaunch vrx_gazebo perception_task.launch
+    4. roslaunch vrx_gazebo navigation_task.launch verbose:=true
+    5. roslaunch vrx_gazebo dock.launch verbose:=true
+    6. roslaunch vrx_gazebo scan_and_dock.launch verbose:=true
+
+In new terminal tab CTRL+SHIFT+T
+Launch control scheme (choose one)
+    7. Gamepad: roslaunch vrx_gazebo usv_joydrive.launch
+    8. Keyboard: roslaunch vrx_gazebo usv_keydrive.launch
+
+In new terminal
+To get a camera setup
+    1. rosrun rqt_gui rqt_gui –perspective-file ~/vrx_ws/src/vrx/vrx_gazebo/config/front_stereo.perspective
+
+
+side note 167 seems to be max funny speed
