@@ -12,13 +12,24 @@ Launch a project (choose one)
     6. roslaunch vrx_gazebo scan_and_dock.launch verbose:=true
 
 In new terminal tab CTRL+SHIFT+T
+
 Launch control scheme (choose one)
     7. Gamepad: roslaunch vrx_gazebo usv_joydrive.launch
     8. Keyboard: roslaunch vrx_gazebo usv_keydrive.launch
 
-In new terminal
+In new terminal tab
+
 To get a camera setup
-    1. rosrun rqt_gui rqt_gui –perspective-file ~/vrx_ws/src/vrx/vrx_gazebo/config/front_stereo.perspective
+    1. roscore
+    2. rviz
+        1. When RVIZ pops up 
+            1. click “add” in the bottom right corner
+            2. choose “By Topic”
+            3. under “Sensors
+                1. Click the arrow next to “cameras”
+                2. Click the arrow of the camera you would like to view
+                3. Click Image
 
+If you’re computer is running slow, you can close the Gazebo app and observe your WAMV through the camera provided.
 
-side note 167 seems to be max funny speed
+Side note: 167 is max funny speed
