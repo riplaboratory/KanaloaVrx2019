@@ -1,4 +1,4 @@
-Setting up VRX Gazebo environment
+Setting up VRX Gazebo environment for Option 2: Build VRX from source
 
 In Terminal
     1. source ~/vrx_ws/devel/setup.bash
