@@ -1,0 +1,67 @@
+VRX Docker Image
+
+
+The repository jordandalessandro/kanaloa_phase2 can create a container that will run the “ros_entrypoint.sh”.
+    note: currently no way to stop the command after it has run.
+    
+In terminal:
+docker run --name kanaloa_phase2 jordandalessandro/kanaloa_phase2
+
+In order to edit this container, open a new tab CTRL + SHIFT + T 
+
+In terminal:
+docker exec -it kanaloa_phase2 bash
+
+Currently you will need to manually source ros in order to use the ros commands:
+
+In terminal:
+source /opt/ros/melodic/setup.bash
+
+You will be able to see what is running by using the command:
+
+In terminal:
+rostopic list
+
+
+
+Commonly used commands Docker Hub
+
+To create a new container from an image:
+docker run --name my_container <USERNAME>/<IMAGE_REPOSITORY_NAME>:<TAG>
+
+In order to start an existing container:
+docker start <CONTAINER ID>
+
+To enter started container:
+docker exec -it <CONTAINER_ID> /bin/bash
+
+To exit a container but keep it running:
+CTRL + P + Q
+
+To exit and stop a container:
+exit
+
+To check if your container is running:
+docker ps
+
+To check all containers started or stopped:
+docker ps -a
+
+To see all Docker images on your machine:
+docker images
+
+Adding files (you will need to move to the location of your file) in terminal write: 
+docker cp <FILE NAME> <CONTAINER ID>:/home<CONTAINER LOCATION>
+
+If you dont want an image anymore
+docker rmi <Image name>
+
+If that does not work add the -f (force) variable
+docker rmi -f <Image_name>
+
+Install tutorial
+https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+
+other useful commands
+https://ligerlearn.com/how-to-edit-files-within-docker-containers/
+
