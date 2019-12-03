@@ -1,0 +1,27 @@
+# WIP
+
+To use a GUI in our docker image:
+docker pull jordandalessandro/kanaloa_base_image
+
+You need to create an image using:
+sudo docker run -i -t --net=host -e DISPLAY -v /tmp/.X11-unix jordandalessandro/kanaloa_base_image bash
+
+Then, make a new terminal tab with CTRL + SHIFT + T
+
+Run the command:
+xauth list
+
+For example:
+jordan-CX62-6QD/unix:0  MIT-MAGIC-COOKIE-1  f49a782396777899103d8e2c91a7c03a
+#ffff#6a6f7264616e2d435836322d365144#:  MIT-MAGIC-COOKIE-1  6c25f11912740313dd99727d006183a9
+
+
+copy all of the text that pops up and then 
+traverse back to your container and run command:
+xauth add jordan-CX62-6QD/unix:0  MIT-MAGIC-COOKIE-1  f49a782396777899103d8e2c91a7c03a
+#ffff#6a6f7264616e2d435836322d365144#:  MIT-MAGIC-COOKIE-1  6c25f11912740313dd99727d006183a9
+
+Test that your sublime works with:
+subl test.txt
+
+If the sublime gui pops up congradulations.
