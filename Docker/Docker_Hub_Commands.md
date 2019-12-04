@@ -1,16 +1,16 @@
 # Docker Hub
-Commonly used commands
+## Commonly used commands
 Docker is a tool that allows companies to create, distribute and run applications all inside a container. Containers are essentially virtual machines that use less resources for the application that they run. The advantage of a container is that they are universal. The developer does not need to worry about compatibility issues with the the customer’s computer.
 
-### install tutorial
-https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+This tutorial assumes you have Docker installed on Ubuntu 18.04.
+If you do not, you can install Docker from this link https://docs.docker.com/install/linux/docker-ce/ubuntu/
 
-### There are two main vocabulary words to understand, Images and Containers. 
+## There are two main vocabulary words to understand, Images and Containers. 
 ### An Image 
-	is what you download from the docker website. It is the base program that you will then build off of. Depending on which Image you download it has specific attributes to it. These attributes can be changed if you create a container from the image but cannot be changed directly. 
+	An image is what you download from the docker website. It is the base program that you will then build off of. Depending on which Image you download it has specific attributes to it. These attributes can be changed if you create a container from the image but cannot be changed directly. 
 
 ### A Container
-	is an instance of the downloaded image. This container inherits all the properties of the image and can be edited to have different applications or files held within it. This container is independent of the image and any other containers created from your base image.
+	A container is an instance of the downloaded image. This container inherits all the properties of the image and can be edited to have different applications or files held within it. This container is independent of the image and any other containers created from your base image.
 
 More about containers: in order for people to be able to access your container from the docker website you will need to commit your container and push it to docker. Until then your container is only available from your local machine. If you delete your container before committing it all progress on that container will be lost.  
 
@@ -76,4 +76,5 @@ To remove image (any containers associated with this image must be removed first
 docker rmi <Image ID>
 
 Good resource: https://ligerlearn.com/how-to-edit-files-within-docker-containers/
+	       https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
 
