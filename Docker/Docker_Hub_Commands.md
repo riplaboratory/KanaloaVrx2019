@@ -4,6 +4,7 @@ Docker is a tool that allows companies to create, distribute and run application
 
 This tutorial assumes you have Docker installed on Ubuntu 18.04.
 If you do not, you can install Docker from this link https://docs.docker.com/install/linux/docker-ce/ubuntu/
+You have a docker hub profile: https://hub.docker.com/
 
 ## There are two main vocabulary words to understand, Images and Containers. 
 ### An Image 
@@ -13,6 +14,8 @@ An image is what you download from the docker website. It is the base program th
 A container is an instance of the downloaded image. This container inherits all the properties of the image and can be edited to have different applications or files held within it. This container is independent of the image and any other containers created from your base image.
 
 More about containers: in order for people to be able to access your container from the docker website you will need to commit your container and push it to docker. Until then your container is only available from your local machine. If you delete your container before committing it all progress on that container will be lost.  
+
+
 
 ### To download an image from the internet
 	1. Go to docker hub and search for ubuntu
@@ -87,35 +90,64 @@ The "bash" command tells docker to put us into a bash shell of the container. Th
 
 	docker stop <Container ID>
 
-## Copying files to your container
-Adding files to container (you will need to move to the location of your file in the terminal on the host machine) 
+## Copying files to your container:
+This might be easier with one terminal tab opened to your local host and another tab in the container.
+
+When adding files to container you will need to move to the location of your file in the terminal on the host machine.
 
 For example: 
+
 ![Desired location to copy](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/cp_file_path.png)
+
+I will be copying the folder Team_Kanaloa into my_container.
+
 Once at the desired location in terminal write: 
 
-	docker cp <file_name> <container ID>:/home/developer/vrx_ws/src/vrx
+	docker cp <file_name> <container ID>:[container path]
+
+This will copy the file from you local machine to the container.
+
+For the desired location within your container:
+
+![container directory](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/container_cp_location.png)
+
+My final command is:
 	
-This will copy the file from you local machine to the container
+	docker cp Team_Kanaloa my_container:/home
+	
+Within your docker contianer you can check that the file is there by typing.
+	
+	ls
+
+When at the home directory.
 
 ### How to push a container to Docker Hub:
+Exit your container. We want to exit and stop the container before uploading it to our repository
+
 docker commit <Container ID> <username/repository_name:tag>
-Ex: docker commit my_container jordandalessandro/vrx-challenge:v4_2019
+Ex: 
+	
+	docker commit my_container jordandalessandro/ubuntu:latest
 
-	### Then run:
+Replace jordandalessandro with your username.
+Then run:
+	
 	docker login
-	You will need to login with your username and password in the terminal
 
-	### After login in we need to push our container to the repository
-	docker push jordandalessandro/vrx-challenge:v4_2019
+You will need to login with your username and password in the terminal
+
+After logging in we need to push our container to the repository
+	
+	docker push jordandalessandro/ubuntu:latest
 
 
 ### Removing a container
-WARNING! Removing a container will get rid of all progress you have made in that container.
-If you want to save your progress, look at HOW TO COMMIT A CONTAINER
-If you want to remove containers that you are not using anymore make sure the image is not running with docker ps if the comtainer is not listed this means it is not running
-docker rm <Container ID>
+***WARNING! Removing a container will get rid of all progress you have made in that container.
+If you want to save your progress, look at HOW TO COMMIT A CONTAINER***
 
+If you want to remove containers that you are not using anymore make sure the container is not running using the command  _docker ps_ if the container is not listed this means it is not running. You can use the container's ID or the name you gave it in the beggining.
+
+	docker rm my_container
 
 ### Removing an image
 To remove image (any containers associated with this image must be removed first)
