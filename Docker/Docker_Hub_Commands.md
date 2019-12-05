@@ -25,7 +25,7 @@ we use the tag "latest" to identify the version of the image we wish to pull. Th
 I find it useful to set your latest build with the tag latest because if someone is pulling your image and they do not specify a version, docker will automatically assign the "latest" tag to the image.
 
 ### To look at your images
-#### In the terminal type out:
+##### In the terminal type out:
 	docker images
 
 ### To create a new intractable, running docker container from an image
