@@ -32,6 +32,8 @@ I find it useful to set your latest build with the tag latest because if someone
 
 ### To create a new intractable, running docker container from an image
 	docker run -it --name my_container <USERNAME>/<IMAGE_REPOSITORY_NAME>:<TAG>
+For example:
+
 ![Image of above command in terminal]
 (https://github.com/JordanDalessandro/Images/blob/master/docker_images.png)
 
