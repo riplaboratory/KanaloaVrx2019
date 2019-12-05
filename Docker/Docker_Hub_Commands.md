@@ -35,7 +35,7 @@ I find it useful to set your latest build with the tag latest because if someone
 For example:
 
 ![Image of above command in terminal]
-(https://github.com/JordanDalessandro/Images/blob/master/docker_images.png)
+(docker_images.png)
 
 
 --name allows you to set a custome name for your container. If this isn't set docker will randomize a name you can use. But custome names make it ease to distinguish between different containers of the same image.
