@@ -15,12 +15,14 @@ A container is an instance of the downloaded image. This container inherits all 
 More about containers: in order for people to be able to access your container from the docker website you will need to commit your container and push it to docker. Until then your container is only available from your local machine. If you delete your container before committing it all progress on that container will be lost.  
 
 ### To download an image from the internet
-	1. Go to docker hub and search for the image you want
+	1. Go to docker hub and search for ubuntu
 	2. Copy the pull command from the image repository
 	3. Past into the terminal
-Example: docker pull osrf/vrx:current
+Example: docker pull ubuntu:latest
 
-### To look at images
+we use the tag "latest" to identify the version of the image we wish to pull. This allows us to have the same name for an image but different build states to go back to if need be.
+
+### To look at your images
 docker images
 
 ### To create a new intractable, running docker container from an image
