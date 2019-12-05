@@ -1,5 +1,5 @@
 # Docker Hub
-## Commonly used commands
+
 Docker is a tool that allows companies to create, distribute and run applications all inside a container. Containers are essentially virtual machines that use less resources for the application that they run. The advantage of a container is that they are universal. The developer does not need to worry about compatibility issues with the the customer’s computer.
 
 This tutorial assumes you have Docker installed on Ubuntu 18.04.
@@ -34,41 +34,69 @@ I find it useful to set your latest build with the tag latest because if someone
 	docker run -it --name my_container <USERNAME>/<IMAGE_REPOSITORY_NAME>:<TAG>
 For example:
 
-![Image of above command in terminal](https://github.com/JordanDalessandro/Images/blob/master/docker_images.png)
+![Image of above command in terminal](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/docker_images.png)
 
+###### --name
+Allows you to set a custome name for your container. If this isn't set docker will randomize a name you can use. But custome names make it ease to distinguish between different containers of the same image.
 
---name allows you to set a custome name for your container. If this isn't set docker will randomize a name you can use. But custome names make it ease to distinguish between different containers of the same image.
+###### -i 
+Creates a stdin stream. You can think of this as a command that makes an "interactable" shell within the container you will create. This is how we will edit documents within the terminal. 
 
--i creates a stdin stream. You can think of this as a command that makes an "interactable" shell within the container you will create. This is how we will edit documents within the terminal. 
-
--t allows for your host machine to open a terminal like environment for your container.
-
-
+###### -t 
+Allows for your host machine to open a terminal like environment for your container.
 
 ### Editing a container
+Now that we are in our ubuntu container it works just like any other ubuntu OS. But the image we pulled from hardly has anything installed. Lets install the text editor Nano:
+
+	apt update
+	apt install nano
+We do not need to prepend these commands with sudo because we are operating as the root user.
+We can now use the nano application to edit files.
+
+### Exiting a container
+There are two ways to exit a container
+
+#### To exit a container but keep it running
+
+	CTRL + P + Q
+
+#### To exit and close a container you are currently in type
+
+	exit
+	
+### To enter a container
 You must enter the container to edit it, make sure the container is running. To enter an existing docker container in bash:
-docker exec -it <container name> bash 
 
-### To exit a container but keep it running
-CTRL + P + Q
+	docker exec -it <container name> bash 
 
-### To exit and close a container you are currently in type
-exit
-Adding files to container (you will need to move to the location of your file then) in terminal write: 
-docker cp <file_name> <container ID>:/home/developer/vrx_ws/src/vrx
+The "bash" command tells docker to put us into a bash shell of the container. This is the same place we were when we created the container from our image.
 
+### To check running containers only:
 
-### To check running containers:
-docker ps
+	docker ps
 
 ### To check running and non running containers:
-docker ps -a
+
+	docker ps -a
 
 ### To start a container:
-docker start <Container ID>
+
+	docker start <Container ID>
 
 ### To stop a container:
-docker stop <Container ID>
+
+	docker stop <Container ID>
+
+## Copying files to your container
+Adding files to container (you will need to move to the location of your file in the terminal on the host machine) 
+
+For example: 
+![Desired location to copy](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/cp_file_path.png)
+Once at the desired location in terminal write: 
+
+	docker cp <file_name> <container ID>:/home/developer/vrx_ws/src/vrx
+	
+This will copy the file from you local machine to the container
 
 ### How to push a container to Docker Hub:
 docker commit <Container ID> <username/repository_name:tag>
@@ -96,5 +124,6 @@ docker rmi <Image ID>
 Good resource: 
 	More info on editing files: https://ligerlearn.com/how-to-edit-files-within-docker-containers/
 	How to install docker: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
-	Commands and their meanings: https://phoenixnap.com/kb/list-of-docker-commands-cheat-sheet
+	Commands and their meanings: https://docs.docker.com/engine/reference/commandline/exec/
+	A good explanation of the -it command: https://stackoverflow.com/questions/30137135/confused-about-docker-t-option-to-allocate-a-pseudo-tty
 
