@@ -18,7 +18,7 @@ More about containers: in order for people to be able to access your container f
 	1. Go to docker hub and search for ubuntu
 	2. Copy the pull command from the image repository
 	3. Past into the terminal
-Example: docker pull ubuntu:latest
+	Example: docker pull ubuntu:latest
 
 we use the tag "latest" to identify the version of the image we wish to pull. This allows us to have the same name for an image but different build states to go back to if need be. For example I could have an image called "my_image" and have three different build states my_image:v1.0   my_image:v2.0   my_image:latest
 
@@ -27,12 +27,22 @@ I find it useful to set your latest build with the tag latest because if someone
 ### To look at your images
 ##### In the terminal type out:
 	docker images
-###### If you get an authorization error prepend the command with sudo:
+##### If you get an authorization error prepend the command with sudo:
 	sudo docker images
 
 ### To create a new intractable, running docker container from an image
-(--name allows you to set a name for your container making it ease to distinguish between different containers of the same image)
-docker run --name my_container <USERNAME>/<IMAGE_REPOSITORY_NAME>:<TAG>
+	docker run -it --name my_container <USERNAME>/<IMAGE_REPOSITORY_NAME>:<TAG>
+![Image of above command in terminal]
+(https://github.com/JordanDalessandro/Images/blob/master/docker_images.png)
+
+
+--name allows you to set a custome name for your container. If this isn't set docker will randomize a name you can use. But custome names make it ease to distinguish between different containers of the same image.
+
+-i creates a stdin stream. You can think of this as a command that makes an "interactable" shell within the container you will create. This is how we will edit documents within the terminal. 
+
+-t allows for your host machine to open a terminal like environment for your container.
+
+
 
 ### Editing a container
 You must enter the container to edit it, make sure the container is running. To enter an existing docker container in bash:
@@ -82,6 +92,8 @@ docker rm <Container ID>
 To remove image (any containers associated with this image must be removed first)
 docker rmi <Image ID>
 
-Good resource: https://ligerlearn.com/how-to-edit-files-within-docker-containers/
-	       https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+Good resource: 
+	More info on editing files: https://ligerlearn.com/how-to-edit-files-within-docker-containers/
+	How to install docker: https://www.digitalocean.com/community/tutorials/how-to-install-and-use-docker-on-ubuntu-18-04
+	Commands and their meanings: https://phoenixnap.com/kb/list-of-docker-commands-cheat-sheet
 
