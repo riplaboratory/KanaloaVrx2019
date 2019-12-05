@@ -27,6 +27,8 @@ I find it useful to set your latest build with the tag latest because if someone
 ### To look at your images
 ##### In the terminal type out:
 	docker images
+###### If you get an authorization error prepend the command with sudo:
+	sudo docker images
 
 ### To create a new intractable, running docker container from an image
 (--name allows you to set a name for your container making it ease to distinguish between different containers of the same image)
