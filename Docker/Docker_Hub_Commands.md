@@ -20,10 +20,13 @@ More about containers: in order for people to be able to access your container f
 	3. Past into the terminal
 Example: docker pull ubuntu:latest
 
-we use the tag "latest" to identify the version of the image we wish to pull. This allows us to have the same name for an image but different build states to go back to if need be.
+we use the tag "latest" to identify the version of the image we wish to pull. This allows us to have the same name for an image but different build states to go back to if need be. For example I could have an image called "my_image" and have three different build states my_image:v1.0   my_image:v2.0   my_image:latest
+
+I find it useful to set your latest build with the tag latest because if someone is pulling your image and they do not specify a version, docker will automatically assign the "latest" tag to the image.
 
 ### To look at your images
-docker images
+#### In the terminal type out:
+	docker images
 
 ### To create a new intractable, running docker container from an image
 (--name allows you to set a name for your container making it ease to distinguish between different containers of the same image)
