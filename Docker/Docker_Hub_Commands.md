@@ -3,7 +3,9 @@
 Docker is a tool that allows companies to create, distribute and run applications all inside a container. Containers are essentially virtual machines that use less resources for the application that they run. The advantage of a container is that they are universal. The developer does not need to worry about compatibility issues with the the customer’s computer.
 
 This tutorial assumes you have Docker installed on Ubuntu 18.04 and you have an account on Docker Hub.
+
 If you do not, you can install Docker from this link: https://docs.docker.com/install/linux/docker-ce/ubuntu/
+
 You can create a profile here: https://hub.docker.com/
 
 ## There are two main vocabulary words to understand, Images and Containers. 
