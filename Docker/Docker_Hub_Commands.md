@@ -15,7 +15,7 @@ An image is what you download from the docker website. It is the base program th
 ### A Container
 A container is an instance of the downloaded image. This container inherits all the properties of the image and can be edited to have different applications or files held within it. This container is independent of the image and any other containers created from your base image.
 
-More about containers: in order for people to be able to access your container you will need to commit your container and push it to the docker website. Until then your container is only available from your local machine. If you delete your container before committing it all progress on that container will be lost.  
+More about containers: in order for people to be able to access your container you will need to commit your container and push it to the docker website. Until then your container is only available from your local machine. ***If you delete your container before committing it all progress on that container will be lost.  ***
 
 
 
