@@ -111,7 +111,7 @@ For example:
 
 ![Desired location to copy](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/cp_file_path.png)
 
-I will be copying the folder Team_Kanaloa into my_container.
+I will be copying the folder _Team_Kanaloa_ into my_container.
 
 Once at the desired location in terminal write: 
 
@@ -119,7 +119,7 @@ Once at the desired location in terminal write:
 
 This will copy the file from you local machine to the container.
 
-For the desired location within your container:
+To find the desired location within your container you can use the _pwd_ command to print the path you are in. copy this path:
 
 ![container directory](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/container_cp_location.png)
 
@@ -127,11 +127,11 @@ My final command is:
 	
 	docker cp Team_Kanaloa my_container:/home
 	
-Within your docker contianer you can check that the file is there by typing.
+I am copying the folder _Team_Kanaloa_ to the _my_container_ container and it will be copied to my _/home_ directory.
+
+Within your docker contianer at the home directory you can check that the file is there by typing.
 	
 	ls
-
-When at the home directory.
 
 ### How to push a container to Docker Hub:
 Exit your container. We want to exit and stop the container before uploading it to our repository
@@ -146,12 +146,14 @@ Then run:
 	
 	docker login
 
-You will need to login with your username and password in the terminal
+You will need to login with your username and password in the terminal.
 
-After logging in we need to push our container to the repository
+After logging in we need to push our container to the repository:
 	
 	docker push jordandalessandro/ubuntu:latest
 
+Once docker has pushed your contianer to its website you can view it by logging in and going to your repository section.
+![Docker Hub Repository](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/DockerHub_Repository.png)
 
 ### Removing a container
 ***WARNING! Removing a container will get rid of all progress you have made in that container.
