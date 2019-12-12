@@ -41,13 +41,13 @@ For example:
 
 ![Image of above command in terminal](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/docker_images.png)
 
-###### --name
+***--name***
 Allows you to set a custome name for your container. If this isn't set docker will randomize a name you can use. But custome names make it ease to distinguish between different containers of the same image.
 
-###### -i 
+***-i***
 Creates a stdin stream. You can think of this as a command that makes an "interactable" shell within the container you will create. This is how we will edit documents within the terminal. 
 
-###### -t 
+***-t*** 
 Allows for your host machine to open a terminal like environment for your container.
 
 ### Editing a container
