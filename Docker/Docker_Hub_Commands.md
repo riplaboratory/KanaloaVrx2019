@@ -1,6 +1,6 @@
 # Docker Hub
 
-Docker is a tool that allows companies to create, distribute and run applications all inside a container. Containers are essentially virtual machines that use less resources for the application that they run.
+Docker is a tool that allows companies to create, distribute and run applications all inside a container. Containers are  virtual environments that use less resources to run their application than virtual machines.
 
 This tutorial assumes you have Docker installed on Ubuntu 18.04 and you have an account on Docker Hub.
 
@@ -25,9 +25,9 @@ More about containers: in order for people to be able to access your container y
 	3. Past into the terminal
 	Example: docker pull ubuntu:latest
 
-we use the tag "latest" to identify the version of the image we wish to pull. This allows us to have the same name for an image but different build states to go back to if need be. For example I could have an image called "my_image" and have three different build states my_image:v1.0   my_image:v2.0   my_image:latest
+We use the ***tag*** "latest" to identify the version of the image we wish to pull. Tags allow us to have different build states of a single image. For example I could have an image called "my_image" and have three different build states my_image:v1.0   my_image:v2.0   my_image:latest
 
-I find it useful to set your latest build with the tag latest because if someone is pulling your image and they do not specify a version, docker will automatically assign the "latest" tag to the image.
+I find it useful to have a build with the tag latest because if someone is pulling your image and they do not specify a version, docker will automatically assign the "latest" tag to the image.
 
 ### To look at your images
 ##### In the terminal type out:
