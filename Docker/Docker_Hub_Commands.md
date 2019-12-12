@@ -164,8 +164,10 @@ If you want to remove containers that you are not using anymore make sure the co
 	docker rm my_container
 
 ### Removing an image
-To remove image (any containers associated with this image must be removed first)
-docker rmi <Image ID>
+To remove image (any containers associated with this image must be stopped and removed first)
+
+	docker rmi <Image ID>
+
 
 Good resource: 
 	More info on editing files: https://ligerlearn.com/how-to-edit-files-within-docker-containers/
