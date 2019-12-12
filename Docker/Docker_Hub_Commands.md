@@ -42,10 +42,10 @@ For example:
 ![Image of above command in terminal](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/docker_images.png)
 
 ***--name***
-Allows you to set a custome name for your container. If this isn't set docker will randomize a name you can use. But custome names make it ease to distinguish between different containers of the same image.
+Allows you to set a custome name for your container. If this isn't set docker will randomize a name you can use. But custome names make it ease to distinguish between multiple containers of the same image.
 
 ***-i***
-Creates a stdin stream. You can think of this as a command that makes an "interactable" shell within the container you will create. This is how we will edit documents within the terminal. 
+Creates a stdin stream. This allows us to input commands and files into our container. You can think of this as a command that makes an "interactable" shell within the container you will create. This is how we will edit documents within the terminal. 
 
 ***-t*** 
 Allows for your host machine to open a terminal like environment for your container.
@@ -58,12 +58,20 @@ Now that we are in our ubuntu container it works just like any other ubuntu OS. 
 We do not need to prepend these commands with sudo because we are operating as the root user.
 We can now use the nano application to edit files.
 
+Lets create a text file called test
+
+	nano test.txt
+
 ### Exiting a container
 There are two ways to exit a container
 
 #### To exit a container but keep it running
 
 	CTRL + P + Q
+
+If you choose this option and need to stop running your container use:
+
+	docker stop <Container ID>
 
 #### To exit and close a container you are currently in type
 
@@ -72,25 +80,27 @@ There are two ways to exit a container
 ### To enter a container
 You must enter the container to edit it, make sure the container is running. To enter an existing docker container in bash:
 
-	docker exec -it <container name> bash 
-
-The "bash" command tells docker to put us into a bash shell of the container. This is the same place we were when we created the container from our image.
-
-### To check running containers only:
+#### check running containers only:
 
 	docker ps
-
-### To check running and non running containers:
+	
+If it is not running you can check all containers with this command:
 
 	docker ps -a
 
-### To start a container:
+In order to start your container:
 
 	docker start <Container ID>
+	
+In our case we would use:
 
-### To stop a container:
+	docker start my_container
 
-	docker stop <Container ID>
+To enter the contianer:
+
+	docker exec -it <container ID> bash 
+
+The "bash" command tells docker to put us into a bash shell of the container. This is the same place we were when we created the container from our image and like before the _-it_ command gives us an interactive terminal window to work with.
 
 ## Copying files to your container:
 This might be easier with one terminal tab opened to your local host and another tab in the container.
