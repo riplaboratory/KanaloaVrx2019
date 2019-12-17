@@ -1,0 +1,8 @@
+prefix=/home/riplaboratory/kanaloa_vrx/devel
+
+Name: way_point_wamv
+Description: Description of way_point_wamv
+Version: 0.0.0
+Cflags: -I/home/riplaboratory/kanaloa_vrx/devel/include
+Libs: -L/home/riplaboratory/kanaloa_vrx/devel/lib 
+Requires: 

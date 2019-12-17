@@ -1,0 +1,2 @@
+kanaloa_pkg
+-DCATKIN_DEVEL_PREFIX=/home/riplaboratory/kanaloa_vrx/devel -DCMAKE_INSTALL_PREFIX=/home/riplaboratory/kanaloa_vrx/install -G Unix Makefiles
