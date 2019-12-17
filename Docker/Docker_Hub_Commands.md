@@ -26,7 +26,9 @@ More about containers: in order for people to be able to access your container y
 	Example: docker pull ubuntu:latest
 ![Image of docker hub's official ubuntu image](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/DockerHub_ubuntu.png)
 
-We use the ***tag*** `latest` to identify the version of the image we wish to pull. Tags allow us to have different build states of a single image. For example I could have an image called "my_image" and have three different build states my_image:v1.0   my_image:v2.0   my_image:latest
+We use the ***tag*** `latest` to identify the version of the image we are working with. Tags allow us to have different build states of a single image. For example I could have an image called "my_image" and have three different build states my_image:v1.0   my_image:v2.0   my_image:latest
+
+Github defines the `pull` command as " ...used to fetch and download content from a remote repository and immediately update the local repository to match that content."
 
 I find it useful to have a build with the tag latest because if someone is pulling your image and they do not specify a version, docker will automatically assign the "latest" tag to the image.
 
