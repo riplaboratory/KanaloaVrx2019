@@ -33,7 +33,7 @@ I find it useful to have a build with the tag latest because if someone is pulli
 ### To look at your images
 ##### In the terminal type out:
 	docker images
-##### If you get an authorization error prepend the command with sudo:
+##### If you get an authorization error prepend this and all other docker commands with sudo:
 	sudo docker images
 
 ### To create a new interactable, running docker container from an image
