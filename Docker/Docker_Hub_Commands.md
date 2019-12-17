@@ -24,6 +24,7 @@ More about containers: in order for people to be able to access your container y
 	2. Copy the pull command from the image repository
 	3. Past into the terminal
 	Example: docker pull ubuntu:latest
+![Image of docker hub's official ubuntu image](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/DockerHub_ubuntu.png)
 
 We use the ***tag*** "latest" to identify the version of the image we wish to pull. Tags allow us to have different build states of a single image. For example I could have an image called "my_image" and have three different build states my_image:v1.0   my_image:v2.0   my_image:latest
 
