@@ -90,15 +90,25 @@ In order to start your container:
 	
 ![ContainerID and name](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/ContainerID_and_name.png)
 
+Each container has an ID and name associated with it. For our Ubuntu container its ID is `266c7fc7c467` and we named it `my_container`.
+
 In our case we would use:
 
 	docker start my_container
+	
+or 
 
-To enter the container:
+	docker start 266c7fc7c467
 
-	docker exec -it <container ID> bash 
+Then we would enter the container:
 
-The "bash" command tells docker to put us into a bash shell of the container. This is the same place we were when we created the container from our image and like before the _-it_ command gives us an interactive terminal window to work with.
+	docker exec -it my_container bash 
+	
+or 
+
+	docker exec -it 266c7fc7c467 bash
+
+The "bash" command tells docker to put us into a bash shell of the container. This is the same place we were when we created the container from our image and like before the `-it` command gives us an interactive terminal window to work with.
 
 ## Copying files to your container:
 This might be easier with one terminal tab opened to your local host and another tab in the container.
