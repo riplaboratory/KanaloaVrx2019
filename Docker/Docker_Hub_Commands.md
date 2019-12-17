@@ -28,7 +28,7 @@ More about containers: in order for people to be able to access your container y
 
 We use the ***tag*** `latest` to identify the version of the image we are working with. Tags allow us to have different build states of a single image. For example I could have an image called "my_image" and have three different build states my_image:v1.0   my_image:v2.0   my_image:latest
 
-Github defines the `pull` command as " ...used to fetch and download content from a remote repository and immediately update the local repository to match that content."
+The `pull` command as essentially downloading the repository to your local machine.
 
 I find it useful to have a build with the tag latest because if someone is pulling your image and they do not specify a version, docker will automatically assign the "latest" tag to the image.
 
@@ -110,18 +110,18 @@ or
 
 	docker exec -it 266c7fc7c467 bash
 
-The "bash" command tells docker to put us into a bash shell of the container. This is the same place we were when we created the container from our image and like before the `-it` command gives us an interactive terminal window to work with.
+The `bash` command tells docker to put us into a bash shell of the container. This is the same place we were when we created the container from our image and like before the `-it` command gives us an interactive terminal window to work with.
 
 ## Copying files to your container:
 This might be easier with one terminal tab opened to your local host and another tab in the container.
 
-When adding files to container you will need to move to the location of your file in the terminal on the host machine.
+When adding files to `my_container` you will need to move to the location of your file in the terminal on the host machine.
 
 For example: 
 
 ![Desired location to copy](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/cp_file_path.png)
 
-I will be copying the folder _Team_Kanaloa_ into my_container.
+I will be copying the folder `Team_Kanaloa` into my_container.
 
 Once at the desired location in terminal write: 
 
@@ -129,9 +129,11 @@ Once at the desired location in terminal write:
 
 This will copy the file from you local machine to the container.
 
-To find the desired location within your container you can use the _pwd_ command to print the path you are in. copy this path:
+To find the desired location within `my_container` you can use the `pwd` command to print the path you are in. copy this path:
 
 ![container directory](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/container_cp_location.png)
+
+In this example I went to the `home` directory within `my_container`.
 
 My final command is:
 	
@@ -165,6 +167,7 @@ You will need to login with your username and password in the terminal.
 After logging in we need to push our container to the repository:
 	
 	docker push jordandalessandro/ubuntu:latest
+The `push` command is essentially uploading to DockerHub.
 
 Once docker has pushed your container to its website you can view it by logging in and going to your repository section.
 ![Docker Hub Repository](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/DockerHub_Repository.png)
