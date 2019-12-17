@@ -35,14 +35,14 @@ I find it useful to have a build with the tag latest because if someone is pulli
 ##### If you get an authorization error prepend the command with sudo:
 	sudo docker images
 
-### To create a new intractable, running docker container from an image
+### To create a new interactable, running docker container from an image
 	docker run -it --name my_container <USERNAME>/<IMAGE_REPOSITORY_NAME>:<TAG>
 For example:
 
 ![Image of above command in terminal](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/docker_images.png)
 
 ***--name***
-Allows you to set a custome name for your container. If this isn't set docker will randomize a name you can use. But custome names make it ease to distinguish between multiple containers of the same image.
+Allows you to set a custom name for your container. If this isn't set docker will randomize a name you can use. But custom names make it ease to distinguish between multiple containers of the same image.
 
 ***-i***
 Creates a stdin stream. This allows us to input commands and files into our container. You can think of this as a command that makes an "interactable" shell within the container you will create. This is how we will edit documents within the terminal. 
@@ -58,10 +58,6 @@ Now that we are in our ubuntu container it works just like any other ubuntu OS. 
 We do not need to prepend these commands with sudo because we are operating as the root user.
 We can now use the nano application to edit files.
 
-Lets create a text file called test
-
-	nano test.txt
-
 ### Exiting a container
 There are two ways to exit a container
 
@@ -73,7 +69,7 @@ If you choose this option and need to stop running your container use:
 
 	docker stop <Container ID>
 
-#### To exit and close a container you are currently in type
+#### To exit a container (while keeping it running) you are currently in type
 
 	exit
 	
@@ -96,7 +92,7 @@ In our case we would use:
 
 	docker start my_container
 
-To enter the contianer:
+To enter the container:
 
 	docker exec -it <container ID> bash 
 
@@ -129,7 +125,7 @@ My final command is:
 	
 I am copying the folder _Team_Kanaloa_ to the _my_container_ container and it will be copied to my _/home_ directory.
 
-Within your docker contianer at the home directory you can check that the file is there by typing.
+Within your docker containner at the home directory you can check that the file is there by typing.
 	
 	ls
 
@@ -152,7 +148,7 @@ After logging in we need to push our container to the repository:
 	
 	docker push jordandalessandro/ubuntu:latest
 
-Once docker has pushed your contianer to its website you can view it by logging in and going to your repository section.
+Once docker has pushed your container to its website you can view it by logging in and going to your repository section.
 ![Docker Hub Repository](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/DockerHub_Repository.png)
 
 ### Removing a container
