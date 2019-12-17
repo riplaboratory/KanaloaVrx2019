@@ -70,17 +70,11 @@ There are two ways to exit a container
 #### To exit a container but keep it running
 
 	CTRL + P + Q
-
-If you choose this option and need to stop running your container use:
-
-	docker stop <Container ID>
-
-#### To exit a container (while keeping it running) you are currently in type
-
+	
 	exit
 	
 ### To enter a container
-You must enter the container to edit it, make sure the container is running. To enter an existing docker container in bash:
+You must enter the container to edit it. To enter an existing docker container in bash:
 
 #### check running containers only:
 
@@ -94,6 +88,8 @@ In order to start your container:
 
 	docker start <Container ID>
 	
+![ContainerID and name](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/ContainerID_and_name.png)
+
 In our case we would use:
 
 	docker start my_container
@@ -137,6 +133,10 @@ Within your docker containner at the home directory you can check that the file 
 
 ### How to push a container to Docker Hub:
 Exit your container. We want to exit and stop the container before uploading it to our repository
+
+#### To stop running your container use:
+
+	docker stop <Container ID>
 
 docker commit <Container ID> <username/repository_name:tag>
 Ex: 
