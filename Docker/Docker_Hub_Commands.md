@@ -38,9 +38,14 @@ I find it useful to have a build with the tag latest because if someone is pulli
 
 ### To create a new interactable, running docker container from an image
 	docker run -it --name my_container <USERNAME>/<IMAGE_REPOSITORY_NAME>:<TAG>
+	
 For example:
 
 ![Image of above command in terminal](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/docker_images.png)
+
+You will now be inside the docker container. This is how you can tell;
+
+![Image of container identification](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/container_indicator.png)
 
 ***--name***
 Allows you to set a custom name for your container. If this isn't set docker will randomize a name you can use. But custom names make it ease to distinguish between multiple containers of the same image.
