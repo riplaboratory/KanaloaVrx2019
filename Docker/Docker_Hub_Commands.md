@@ -139,7 +139,10 @@ My final command is:
 	
 	docker cp Team_Kanaloa my_container:/home
 	
-I am copying the folder _Team_Kanaloa_ to the _my_container_ container and it will be copied to my _/home_ directory.
+I am copying the folder `Team_Kanaloa` to the `my_container` container and it will be copied to the `/home` directory.
+
+It should look like this:
+![Docker copy command](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/Docker_copy_command.png)
 
 Within your docker containner at the home directory you can check that the file is there by typing.
 	
@@ -157,6 +160,8 @@ Ex:
 	
 	docker commit my_container jordandalessandro/ubuntu:latest
 
+###### note: You can think of `commit` as saving your progress before uploading to the repository
+
 Replace jordandalessandro with your username.
 Then run:
 	
@@ -167,7 +172,8 @@ You will need to login with your username and password in the terminal.
 After logging in we need to push our container to the repository:
 	
 	docker push jordandalessandro/ubuntu:latest
-The `push` command is essentially uploading to DockerHub.
+	
+###### note: The `push` command is essentially uploading to DockerHub.
 
 Once docker has pushed your container to its website you can view it by logging in and going to your repository section.
 ![Docker Hub Repository](https://github.com/JordanDalessandro/Images/blob/master/Docker_Tutorial/DockerHub_Repository.png)
