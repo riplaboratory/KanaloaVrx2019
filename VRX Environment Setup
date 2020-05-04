@@ -23,7 +23,7 @@ To get a camera setup
     1. roscore
     2. rviz
         1. When RVIZ pops up 
-            1. click “add” in the bottom right corner
+            1. click “add” in the bottom left corner
             2. choose “By Topic”
             3. under “Sensors
                 1. Click the arrow next to “cameras”
